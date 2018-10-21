@@ -1,7 +1,20 @@
 <nav>
-  {% for item in site.data.nav %}
-    <a href="{{ item.link }}" {% if page.url == item.link %}class="current"{% endif %}>
-      {{ item.name }}
-    </a>
-  {% endfor %}
+</nav>
+<nav class="navbar navbar-inverse" role="navigation">
+	<div class="container-fluid">
+    <div class="navbar-header">
+        <a class="navbar-brand" href="#">招妹</a>
+    </div>
+    <div>
+        <ul class="nav navbar-nav">
+			    {% for item in site.data.nav %}
+	                <li {% if page.url == item.link %}class="active"{% endif %}>
+					    <a href="{{ item.link }}" >
+                           {{ item.name }}
+                        </a>
+				    </li>
+                {% endfor %}
+        </ul>
+    </div>
+	</div>
 </nav>
